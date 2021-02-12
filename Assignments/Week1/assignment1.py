@@ -1,4 +1,4 @@
-from skimage import data 
+from skimage import data, io 
 from skimage.viewer import ImageViewer 
 import numpy as np
 
@@ -23,7 +23,9 @@ def filterBlueColor(image : np.array):
             col[1] = y 
             col[2] = y
 
-image = data.colorwheel()
+imgpath = input("Image Path: ")
+image = io.imread(imgpath)
+#image = data.colorwheel()
 # image = data.astronaut()
 filterBlueColor(image)
 
